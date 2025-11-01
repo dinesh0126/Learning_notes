@@ -1,4 +1,4 @@
-c# Java Notes 
+# Java Notes 
 
 # History of Java
 Java is compiled and interpreted language. Java was introduced in 1990 by Sun Microsystems, led by James Gosling.
@@ -467,6 +467,61 @@ it means that the responsibility of handling exception is passed to the called m
 **** custome Excepiton ***** 
 ![throw](../Images/custom_exception.jpg)
 
+
+#Interface in Java
+
+An interface in Java is a blueprint of a class.
+It is used to achieve abstraction and multiple inheritance in Java.
+
+<pre>
+<code>
+
+// Interface declaration
+interface Animal {
+    void eat();      // abstract method
+    void sound();    // abstract method
+}
+
+// Implementing the interface
+class Dog implements Animal {
+    public void eat() {
+        System.out.println("Dog eats bones");
+    }
+
+    public void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+// Another implementing class
+class Cat implements Animal {
+    public void eat() {
+        System.out.println("Cat drinks milk");
+    }
+
+    public void sound() {
+        System.out.println("Cat meows");
+    }
+}
+
+// Main class to run the program
+public class Main {
+    public static void main(String[] args) {
+        Animal a1 = new Dog(); // Reference of interface
+        a1.eat();
+        a1.sound();
+
+        Animal a2 = new Cat();
+        a2.eat();
+        a2.sound();
+    }
+}
+
+
+</code>
+</pre>
+
+
 # Multithreading in Java
 Process of Creating multiple thread.
 Multithreading means executing multiple thread simultaneously to achieve concurrent execution.
@@ -741,12 +796,69 @@ Before learning Collection you know about wrapper class
 
 Wraper class in java are used to wrap primitive data types.
 
+Wraper classes
+1) byte -> Byte
+2) short -> Short
+3) int -> Integer
+4) long -> Long
+5) float -> Float
+6) double -> Double
+7) char -> Character
+8) boolean -> Boolean
 
+Why wraper class
+----------------------
+Note: Java was designed to be object-oriented,but primitive are not object so we can't perfom some operations so we need wrapper classes
 
+eg.Wraper class
 
+<pre>
+<code>
+class Collection{
+    public static void main(String[] args) {
+       Integer i = 100;
+       Integer i2 = 100;
+       // note it give true -128 to 127 cache mentain
+       // if i >100 and i2 >100 then i gives false 
+       System.out.println(i==i2);
+        
+    }
+}
+</code>
+</pre>
 
+Collection vs Collections
+-------------------------
+Collection ---> super interface for List,Set ,Queue
+Collections --> utility/helper class with static method
 
+Collection Hierarchy
+-------------------------------
 
+<pre>
+<code>
+                  Iterable (Interface)
+                         │
+                 ┌───────┴────────┐
+                 │                │
+              Collection       Map (Interface)
+                 │
+     ┌───────────┼────────────┐
+     │           │            │
+    List        Set         Queue
+     │           │            │
+     │           │        Deque (Interface)
+     │           │            │
+     │           │            │
+ArrayList     HashSet      PriorityQueue
+LinkedList    LinkedHashSet ArrayDeque
+Vector        TreeSet
+Stack
 
+</code>
+</pre>
 
+Note:
+List -> duplicate allowed,insertion orderis preserved,
+set -> duplicate not allowed, insertion order not preserved
 
