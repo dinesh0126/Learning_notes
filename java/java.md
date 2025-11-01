@@ -789,6 +789,7 @@ public class Main {
 </pre>
 
 # Collection in java
+----------------------------------
 
 In java collection is an object that group multiple element into single entity.
 Eg:It is like container that hold multiple object into one place.
@@ -854,11 +855,72 @@ ArrayList     HashSet      PriorityQueue
 LinkedList    LinkedHashSet ArrayDeque
 Vector        TreeSet
 Stack
-
 </code>
 </pre>
-
 Note:
 List -> duplicate allowed,insertion orderis preserved,
 set -> duplicate not allowed, insertion order not preserved
+Hashset -> No duplicate random no order
+LinkedHashset -> No duplicate , Maintain insertion order
+
+Examples : ----->
+1) ArrayList 
+<pre>
+<code>
+import java.util.ArrayList;
+import java.util.List;
+class Collection{
+    public static void main(String[] args) {
+       List<Integer> nums = new ArrayList<>();
+       nums.add(36);
+       nums.add(27);
+       nums.add(43);
+       nums.add(46);
+       nums.add(36);
+       System.out.println(nums);
+       System.out.println(nums.get(3));
+       // some methods like size(),Add(),Remove(),clear(),isEmpty() etc;
+    }
+}
+</code>
+</pre>
+Example stack:
+<pre>
+<code>
+import java.util.Stack;
+class Collection{
+    public static void main(String[] args){
+      Stack<Integer> st = new Stack<>();
+      st.push(43);
+      st.push(27);
+      st.push(36);
+      st.push(37);
+      st.pop();
+      System.out.println(st);    
+    }
+}
+</code>
+</pre>
+Set Example:
+-------------
+no duplicate
+order nahi hai
+random access nahi hai
+<pre>
+<code>
+import java.util.HashSet;
+import java.util.Set;
+class Collection{
+    public static void main(String[] args){
+       Set<Integer> st = new HashSet<>();
+       st.add(3);
+       st.add(4);
+       st.add(3);
+       st.add(40);
+       st.add(49);
+       System.out.println(st);
+    }
+}
+</code>
+</pre>
 
