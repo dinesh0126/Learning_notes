@@ -923,8 +923,34 @@ class Collection{
 }
 </code>
 </pre>
-
-
-
-
-
+Map
+Hashmap -> Duplicate key not allowd,Order not available,null allowed at once.
+<pre>
+<code>
+import java.util.HashMap;
+import java.util.Map;
+class Test{
+    public static void main(String[] args) {
+        Map<String,Integer> map = new HashMap<>();
+        map.put("one",1);
+        map.put("two",2);
+       if(map.containsKey("one")){
+        System.out.println("key one is availabe");
+       }
+       // fetch all keys note the String type is the key which is string type
+       for(String data: map.keySet()){
+        System.out.println(data);
+        System.out.println(map.get(data));
+       }
+       // 2 mehtod
+       for(Integer values:map.values()){
+        System.out.println(values);
+       }
+       //3 method
+       for(Map.Entry<String,Integer> entry:map.entrySet()){
+        System.out.println("key :"+entry.getKey()+" values: "+entry.getValue());
+       }
+    }
+}
+</code>
+</pre>
