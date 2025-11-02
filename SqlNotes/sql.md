@@ -35,6 +35,19 @@ INSERT INTO amazon_detail VALUES(
 
 Print the value of the table
 ---------------------------------
+<pre>
+<code>
 syntax: Select * from table_name
 eg:
 SELECT * FROM amazon_detail;
+</code>
+</pre>
+if we want to sort the data than we use the Order by
+<pre>
+<code>
+syntax: SELECT  * FROM table_name order by attribute_name ;
+
+eg:
+SELECT  * FROM amazon_detail ORDER_BY product_name ;
+</code>
+</pre>
